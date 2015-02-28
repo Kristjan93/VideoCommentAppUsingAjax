@@ -1,0 +1,53 @@
+﻿@model IEnumerable<VideoBlogApplication.Models.Comment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Video blog application</h2>
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/OgGbNJdMaTY" frameborder="0" allowfullscreen></iframe>
+
+    <ul class="list-group" id="ulList" style="max-width: 560px;">
+       
+         <li style="list-style-type:none" id="commentList"></li>
+        <li style="list-style-type:none" id="likeList"></li>
+        <li class="list-group-item">
+
+
+
+    <div class="form-horizontal">
+        <label class="sr-only" for="CommentText">Comment</label>
+        <textarea class="form-control" rows="3" id="CommentText" name="CommentText"></textarea>
+        <button class="btn btn-primary" id="PostIt">Send</button>
+    </div>
+   
+</li>
+</ul>
+
+
+<script type="text/html" id="template">
+
+    <li class="list-group-item" id="liList">
+        <p>
+            <span class="glyphicon glyphicon-user"></span>
+            <span class="text-primary" id="UserId" data-content ="Username"></span>
+            <span data-content="CommentText"></span>
+        </p>
+        <p>
+            <span class="text-muted" id="DateRightNOW" data-content="CommentDate"></span>
+            <a class="like-comment" id="LikeButtonToLike" href="#" data-id="1">Like <span class="glyphicon glyphicon-thumbs-up"></span></a>
+            <!--<div>Great Video!</div>-->
+        </p>
+        <p id="ListOfLikes"></p>
+    </li>
+
+</script>
+
+<script type="text/html" id="templateLike">
+   <div>
+        <span  data-content="LikeUsername"></span>
+        <span> likes this</span>
+        <span data-content="LikeDate"></span>
+    </div>
+</script>
